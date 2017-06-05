@@ -1,2 +1,2 @@
 # DeepLearning_h2o
-Deep Learning algorithms using H2O platform
+Deep Learning and GLM algorithms using H2o platform
