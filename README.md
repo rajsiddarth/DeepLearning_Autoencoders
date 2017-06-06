@@ -7,7 +7,7 @@ Deep Learning and GLM algorithms using H2o platform
 
 *iii. DeepLearning :implementation of Random forest algorithm and Deep learning in R.The code shows the generation of deep learning features which are further used to build random forest model on the data set*
 
-*Variable Description for Classification_model1*:
+*Variable Description for data set*:
 
 *ID: Customer ID
 
