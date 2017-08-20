@@ -89,15 +89,15 @@ train=as.h2o(x = train_Data, destination_frame = "train")
 test=as.h2o(x=test_Data,destination_frame="test")
 
 #Deep learning model
-model_dl=h2o.deeplearning(x=names(train[-7]),autoencoder = T,training_frame = train,hidden = c(15),activation ="Tanh",epochs = 150 )
+model_dl=h2o.deeplearning(x=setdiff(names(train),"loan"),autoencoder = T,training_frame = train,hidden = c(5,3),activation ="Tanh",epochs = 150 )
 
 #Important features generated using deep learning
-dl_features=as.data.frame(h2o.deepfeatures(model_dl,data = train[-7]))
-dl_features_test=as.data.frame(h2o.deepfeatures(model_dl,data = test[-7]))
+dl_features_train=as.data.frame(h2o.deepfeatures(model_dl,data = train[-10]))
+dl_features_test=as.data.frame(h2o.deepfeatures(model_dl,data = test[-10]))
 
 
 #Combining deep learning features with original features
-train_dl=cbind(train_Data,dl_features)
+train_dl=cbind(train_Data,dl_features_train)
 test_dl=cbind(test_Data,dl_features_test)
 
 #Applying random forests on model with original daa set and deep learning features
