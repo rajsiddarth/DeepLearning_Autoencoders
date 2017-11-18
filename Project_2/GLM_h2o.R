@@ -134,7 +134,6 @@ h2o.shutdown(F)
 conf_Matrix_GLM = table(pred_GLM$loan, pred_GLM$predict) 
 
 Accuracy = (conf_Matrix_GLM[1,1]+conf_Matrix_GLM[2,2])/sum(conf_Matrix_GLM)
-
 print(paste("Accuracy :",round(Accuracy,2)))
 
 
